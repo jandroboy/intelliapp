@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Details Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-start min-h-screen py-10">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
+        <div class="mb-6">
+            <div class="bg-gray-200 h-2 rounded-full">
+                <div class="bg-blue-500 h-2 rounded-full w-1/3"></div>
+            </div>
+            <p class="text-center text-sm text-gray-600 mt-2">Completion Progress</p>
+        </div>
+
+        <div class="bg-green-100 border-l-4 border-green-500 p-4 mb-6 flex items-start">
+            <i class="fas fa-info-circle text-green-500 mr-3 mt-1"></i>
+            <p class="text-green-700">Please only provide VALID drivers license details. If you are applying for a non driving position leave DOT Medical Card information blank</p>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-4">License Details</h2>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="19995e53-1f5e-4087-95f3-14af69eac679">
+            <input type="hidden" name="redirect" value="https://github.com/abi/screenshot-to-code/wiki/Tips-for-better-results">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="license-number">
+                    License Number <span class="text-red-500">*</span>
+                </label>
+                <input name="text" id="license-number" class="w-full p-2 bg-gray-200 rounded" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="country">
+                    Country <span class="text-red-500">*</span>
+                </label>
+                <select id="country" class="w-full p-2 bg-gray-200 rounded appearance-none" required>
+                    <option>United States</option>
+                </select>
+            </div>
+            <div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">
+                        <label for="dob" class="block text-sm font-medium text-gray-700 mb-1">License Expiration (mm/dd/yyyy) *</label>
+                    </label>
+                <div class="flex space-x-2">
+                    <select id="dobMonth" name="dobMonth" required class="w-1/3 p-2 bg-gray-200 rounded appearance-none">
+                        <option value="">Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select id="dobDay" name="dobDay" required class="w-1/3 p-2 bg-gray-200 rounded appearance-none">
+                        <option value="">Day</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <input type="text" id="dobYear" name="dobYear" required placeholder="YYYY" class="w-1/3 p-2 bg-gray-200 rounded appearance-none">
+                </div>
+            
+
+            </div>
+            <div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2">
+                    DOT Medical Card Expiration Date
+                </label>
+                <div class="flex space-x-2">
+                    <select class="w-1/3 p-2 bg-gray-200 rounded appearance-none">
+                        <option value="">Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select class="w-1/3 p-2 bg-gray-200 rounded appearance-none">
+                        <option value="">Day</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <input type="text" class="w-1/3 p-2 bg-gray-200 rounded" placeholder="YYYY">
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-medium mb-2">
+                    Is this your current driver license? <span class="text-red-500">*</span>
+                </label>
+                <div class="flex space-x-4">
+                    <button type="button" id="yesButton" class="w-20 py-2 bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200" onclick="toggleButton('yesButton')">Yes</button>
+                    <button type="button" id="noButton" class="w-20 py-2 bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200" onclick="toggleButton('noButton')">No</button>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                    <a href="index5.html">Back</a> 
+                </button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleButton(buttonId) {
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+
+            if (buttonId === 'yesButton') {
+                yesButton.classList.remove('bg-gray-200');
+                yesButton.classList.add('bg-blue-500', 'text-white');
+                noButton.classList.remove('bg-blue-500', 'text-white');
+                noButton.classList.add('bg-gray-200');
+            } else {
+                noButton.classList.remove('bg-gray-200');
+                noButton.classList.add('bg-blue-500', 'text-white');
+                yesButton.classList.remove('bg-blue-500', 'text-white');
+                yesButton.classList.add('bg-gray-200');
+            }
+        }
+    </script>
+</body>
+</html>

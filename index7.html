@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMCSR Questionnaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-2xl w-full">
+        <h1 class="text-2xl font-bold text-center mb-6 text-gray-800">FMCSR</h1>
+        
+        <div class="space-y-6">
+            <div>
+                <p class="mb-2 text-gray-700">1. Under FMCSR 391.15, are you currently disqualified from driving a commercial motor vehicle? [49 CFR 391.15]*</p>
+                <div class="flex space-x-4">
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">Yes</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">No</button>
+                </div>
+            </div>
+
+            <div>
+                <p class="mb-2 text-gray-700">2. Has your license, permit, or privilege to drive ever been suspended or revoked for any reason? [49 CFR 391.21(b)(9)]*</p>
+                <div class="flex space-x-4">
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">Yes</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">No</button>
+                </div>
+            </div>
+
+            <div>
+                <p class="mb-2 text-gray-700">3. Have you ever been denied a license, permit, or privilege to operate a motor vehicle?[49 CFR 391.21(b)(9)]*</p>
+                <div class="flex space-x-4">
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">Yes</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">No</button>
+                </div>
+            </div>
+
+            <div>
+                <p class="mb-2 text-gray-700">4. Within the past two years, have you tested positive, or refused to test, on a pre-employment drug or alcohol test by an employer to whom you applied, but did not obtain, safety-sensitive transportation work covered by DOT agency drug and alcohol testing rules? [49 CFR 40.25(j)]*</p>
+                <div class="flex space-x-4">
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">Yes</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" onclick="selectButton(this)">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 flex justify-between">
+            <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                <a href="index6.html">Back</a> 
+             </button>
+             <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                <a href="index8.html">Next</a> 
+             </button>
+        </div>
+    </div>
+
+    <script>
+        function selectButton(button) {
+            // Remove the blue background from all buttons in the same group
+            const parentDiv = button.parentElement;
+            const buttons = parentDiv.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-500', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+
+            // Add the blue background to the clicked button
+            button.classList.remove('bg-gray-200', 'text-gray-700');
+            button.classList.add('bg-blue-500', 'text-white');
+        }
+    </script>
+</body>
+</html>

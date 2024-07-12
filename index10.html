@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <div class="container mx-auto px-4 py-8 flex-grow">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="p-6">
+                <div class="bg-green-200 p-4 mb-6 rounded-md flex items-start">
+                    <span class="text-2xl mr-2">ⓘ</span>
+                    <p class="text-gray-700">
+                        This certifies that this application was completed by me, and that all entries on it and information in it are true and complete to the best of my knowledge.
+                    </p>
+                </div>
+                <p class="mb-4 text-gray-700">
+                    Please use your finger or mouse to sign your name in the rectangle below. Click "Next" when finished.
+                </p>
+                <div id="signature-pad" class="border-2 border-dashed border-gray-300 p-4 mb-4 h-40 relative">
+                    <canvas id="signature-canvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+                    <div class="absolute bottom-4 left-4 right-4 border-b border-gray-400"></div>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button id="clear-btn" class="bg-gray-300 text-gray-700 px-6 py-2 rounded">Clear</button>
+                </button>
+                <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                   <a href="index11.html">Next</a> 
+                </button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-6">
+            <button class="w-full bg-blue-600 text-white py-3 rounded">Back</button>
+        </div>
+    </div>
+    <footer class="bg-white py-4 text-center">
+        <a href="#" class="text-blue-600 hover:underline">Tenstreet Privacy Policy</a>
+        <p class="text-gray-600 text-sm mt-2">© Copyright 2006-2024, Tenstreet</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('signature-canvas');
+            const clearBtn = document.getElementById('clear-btn');
+            const saveBtn = document.getElementById('save-btn');
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+
+            function resizeCanvas() {
+                const parentDiv = canvas.parentElement;
+                canvas.width = parentDiv.offsetWidth;
+                canvas.height = parentDiv.offsetHeight;
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            function startDrawing(e) {
+                isDrawing = true;
+                draw(e);
+            }
+
+            function stopDrawing() {
+                isDrawing = false;
+                ctx.beginPath();
+            }
+
+            function draw(e) {
+                if (!isDrawing) return;
+
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#000';
+
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            }
+
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Touch events for mobile
+            canvas.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                startDrawing(e.touches[0]);
+            });
+            canvas.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+                draw(e.touches[0]);
+            });
+            canvas.addEventListener('touchend', stopDrawing);
+
+            clearBtn.addEventListener('click', function() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            });
+
+            saveBtn.addEventListener('click', function() {
+                // Here you would typically send the signature data to a server
+                // For this example, we'll just log it to the console
+                console.log('Signature saved:', canvas.toDataURL());
+                alert('Signature saved!');
+            });
+        });
+    </script>
+</body>
+</html>
